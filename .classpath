@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="C:/Users/lijihuan/workspace/DBNService/web/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/c3p0-0.9.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-cli-1.0.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-fileupload-1.2.2.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/jstl-1.2.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/junit-3.8.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.aop-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.asm-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.aspects-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.beans-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.context-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.context.support-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.core-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.expression-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.transaction-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.web-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.web.portlet-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.web.servlet-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.web.struts-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/slf4j-api-1.6.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.orm-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/slf4j-log4j12-1.6.5.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/org.springframework.jdbc-3.1.4.RELEASE.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/javassist-3.15.0-GA.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/cglib-nodep-2.1_3.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/jackson-core-2.1.0.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/jackson-annotations-2.1.0.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/jackson-databind-2.1.0.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/Sdk4J.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/druid-1.0.1.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/druid-0.2.9.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/aliyun-openservices.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/commons-io-1.4.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/httpmime-4.2.3.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/noggit-0.5.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/wstx-asl-3.2.7.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/xmemcached-1.4.3.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/zookeeper-3.4.5.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/httpclient-4.2.3.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/httpcore-4.2.2.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/mysql-connector-java-5.1.32.jar"/>
+	<classpathentry kind="lib" path="web/WEB-INF/lib/jcseg-core-1.9.5.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/servlet-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/jasper.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/jsp-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
+	<classpathentry kind="output" path="web/WEB-INF/classes"/>
+</classpath>
