@@ -16,6 +16,7 @@ public class ProductService {
 	
 	public void getProductDetail(HttpServletRequest request,
 			HttpServletResponse response, ApiContext apiContext,long productId) throws Exception{
+		System.out.println("in1");
 		ProductBean product = productProvider.getProduct(productId);
 		if (product == null) {
 			JsonResponseUtils.writeJson(response, new ErrorResponse("无效的产品！"));
