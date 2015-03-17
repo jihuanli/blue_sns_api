@@ -21,7 +21,6 @@ public class SessionKeyUtil {
 			try {
 				reader = new BufferedReader(new FileReader(file));
 				String tempString = null;
-				int line=0;
 				// 一次读入一行，直到读入null为文件结束
 				while ((tempString = reader.readLine()) != null) {
 					// 显示行号
@@ -35,9 +34,7 @@ public class SessionKeyUtil {
 					result.append(aa[1]);
 					result.append("\t");
 					result.append(SessionKeyUtils.encrypt(sessionKey));
-					result.append("\r\n");
-					line++;
-					
+					result.append("\r\n");	
 				}
 				reader.close();
 			} catch (IOException e) {
