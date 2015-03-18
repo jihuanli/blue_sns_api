@@ -21,7 +21,6 @@ public class ProductController {
 	@RequestMapping("/getProductDetail.do")
     public void getProductDetail(HttpServletRequest request,HttpServletResponse response,ApiContext apiContext,
     		@RequestParam(value="productId",required=true) long productId) throws Exception {
-		System.out.println("in0");
 		productService.getProductDetail(request, response,apiContext,productId);
     }	
 	
