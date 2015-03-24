@@ -19,11 +19,11 @@ public class NewsDao extends NamedParameterJdbcDaoSupport {
 	/**
 	 * 根据id获取新闻
 	 * */
-	private static final String GET_NEWS_BY_ID = "select * from news where id=?  ";
+	private static final String GET_NEWS_BY_ID = "select * from news where news_id=?  ";
 
-	public News getNews(long productId) {
+	public News getNews(long newsId) {
 		List<News> list = this.getJdbcTemplate().query(
-				GET_NEWS_BY_ID,new Object[] { productId }, MAPPER);
+				GET_NEWS_BY_ID,new Object[] { newsId }, MAPPER);
 		if (CollectionUtils.isNotEmpty(list)) {
 			return list.get(0);
 		}

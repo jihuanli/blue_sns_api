@@ -18,7 +18,7 @@ public class NewsService {
 			HttpServletResponse response, ApiContext apiContext,long newsId) throws Exception{
 		NewsBean news = newsProvider.getNews(newsId);
 		if (news == null) {
-			JsonResponseUtils.writeJson(response, new ErrorResponse("无效的产品！"));
+			JsonResponseUtils.writeJson(response, new ErrorResponse("无效的新闻！"));
 			return;
 		}
 		JsonResponseUtils.writeJson(response, JsonUtils.objectToJsonString(news));
