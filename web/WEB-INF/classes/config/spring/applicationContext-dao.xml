@@ -10,7 +10,7 @@
         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd  
         ">
 
-	<bean id="productDao" class="com.dabanniu.dao.impl.ProductDao">
+	<bean id="newsDao" class="com.dabanniu.dao.impl.NewsDao">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 

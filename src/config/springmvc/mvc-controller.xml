@@ -5,9 +5,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="productController"
-		class="com.dabanniu.api.controller.ProductController">	
-		<property name="productService" ref="productService"></property>				
+	<bean id="newsController" class="com.dabanniu.api.controller.NewsController">	
+		<property name="newsService" ref="newsService"></property>				
 	</bean>
 	
 </beans>
