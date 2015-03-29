@@ -12,6 +12,9 @@ public class BeanUtils {
 	 * @param to
 	 */
 	public static void copyProperties(Object from, Object to)  {
+		if (from == null || to == null) {
+			return;
+		}
 		copyPropertiesExclude(from, to, null);
 	}
 	

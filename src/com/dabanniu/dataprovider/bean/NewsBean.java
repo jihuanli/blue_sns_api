@@ -9,13 +9,13 @@ public class NewsBean {
 	
 	private String content;
 	
-	private String image_path;
+	private String image_url;
 	
-	private Integer create_time;
+	private Long create_time;
 	
 	private Integer factory_id;
 	
-	private Integer author_id;
+	private Integer user_id;
 	
 	private Integer like_num;
 
@@ -35,19 +35,19 @@ public class NewsBean {
 		this.content = content;
 	}
 
-	public String getImage_path() {
-		return image_path;
+	public String getImage_url() {
+		return image_url;
 	}
 
-	public void setImage_path(String image_path) {
-		this.image_path = image_path;
+	public void setImage_url(String image_url) {
+		this.image_url = image_url;
 	}
 
-	public Integer getCreate_time() {
+	public Long getCreate_time() {
 		return create_time;
 	}
 
-	public void setCreate_time(Integer create_time) {
+	public void setCreate_time(Long create_time) {
 		this.create_time = create_time;
 	}
 
@@ -59,12 +59,12 @@ public class NewsBean {
 		this.factory_id = factory_id;
 	}
 
-	public Integer getAuthor_id() {
-		return author_id;
+	public Integer getUser_id() {
+		return user_id;
 	}
 
-	public void setAuthor_id(Integer author_id) {
-		this.author_id = author_id;
+	public void setAuthor_id(Integer user_id) {
+		this.user_id = user_id;
 	}
 
 	public Integer getLike_num() {

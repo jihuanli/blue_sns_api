@@ -16,6 +16,9 @@ public class NewsProvider {
 	
 	public NewsBean getNews(long newsId) throws Exception {
 		News news = newsDao.getNews(newsId);
+		if (news == null) {
+			return null;
+		}
 		NewsBean bean = new NewsBean(); 
 		BeanUtils.copyProperties(news, bean);
 		return bean;

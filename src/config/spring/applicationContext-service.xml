@@ -15,4 +15,9 @@
 		<property name="newsProvider" ref="newsProvider" />
 	</bean>
 	
+	<bean id="messageService"
+		class="com.dabanniu.service.impl.MessageService">
+		<property name="messageProvider" ref="messageProvider" />
+	</bean>
+	
 </beans>

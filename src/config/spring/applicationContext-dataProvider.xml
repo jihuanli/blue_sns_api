@@ -14,4 +14,10 @@
 		class="com.dabanniu.dataprovider.impl.NewsProvider">
 		<property name="newsDao" ref="newsDao" />						
 	</bean>
+	
+	<bean id="messageProvider"
+		class="com.dabanniu.dataprovider.impl.MessageProvider">
+		<property name="messageDao" ref="messageDao" />						
+	</bean>
+	
 </beans>

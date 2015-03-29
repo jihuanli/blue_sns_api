@@ -9,4 +9,8 @@
 		<property name="newsService" ref="newsService"></property>				
 	</bean>
 	
+	<bean id="messageController" class="com.dabanniu.api.controller.MessageController">	
+		<property name="messageService" ref="messageService"></property>				
+	</bean>
+	
 </beans>

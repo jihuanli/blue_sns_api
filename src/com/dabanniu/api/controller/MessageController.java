@@ -8,23 +8,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dabanniu.core.parameter.ApiContext;
-import com.dabanniu.service.impl.NewsService;
+import com.dabanniu.service.impl.MessageService;
 
 @Controller
-public class NewsController {
+public class MessageController {
 	
-	private NewsService newsService;
+	private MessageService messageService;
 	
 	/**
-	 * 通过id获取新闻
+	 * 通过id获取消息
 	 * */
-	@RequestMapping("/getNewsDetail.do")
+	@RequestMapping("/getMessageDetail.do")
     public void getNewsDetail(HttpServletRequest request,HttpServletResponse response,ApiContext apiContext,
-    		@RequestParam(value="newsId",required=true) long newsId) throws Exception {
-		newsService.getNewsDetail(request, response, apiContext, newsId);
+    		@RequestParam(value="messageId",required=true) long messageId) throws Exception {
+		messageService.getMessageDetail(request, response, apiContext, messageId);
     }	
 	
-	public void setNewsService(NewsService newsService) {
-		this.newsService = newsService;
+	public void setMessageService(MessageService messageService) {
+		this.messageService = messageService;
 	}
 }

@@ -13,5 +13,9 @@
 	<bean id="newsDao" class="com.dabanniu.dao.impl.NewsDao">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
+	
+	<bean id="messageDao" class="com.dabanniu.dao.impl.MessageDao">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
 
 </beans>
