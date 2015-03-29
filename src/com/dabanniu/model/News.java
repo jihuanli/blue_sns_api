@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import com.dabanniu.model.BaseModel;
 
-public class News extends BaseModel  implements Serializable {
+public class News extends BaseModel implements Serializable {
 
 	private static final long serialVersionUID = -3354231969216571323L;
 	
