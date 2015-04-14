@@ -33,8 +33,7 @@ public class MessageService {
 	@SuppressWarnings("unchecked")
 	public void getMessagesByFactory(HttpServletRequest request,
 			HttpServletResponse response, ApiContext apiContext, 
-			long factory_id, long mark, int order, int type) throws IOException {
-		int page_cnt = 2;
+			long factory_id, long mark, int order, int type, int page_cnt) throws IOException {
 		ListResultData resultData = messageProvider.getMessagesByFactory(factory_id, mark, page_cnt, order, type);
 		List<MessageBean> list = resultData.getData();
 		MessagesResultBean output_messages = new MessagesResultBean();

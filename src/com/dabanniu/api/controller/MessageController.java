@@ -26,14 +26,22 @@ public class MessageController {
 		messageService.getMessageDetail(request, response, apiContext, messageId);
 	}
 	
+	/**
+	 * @param factory_id 
+	 * @param mark  标记id
+	 * @param order 0-按时间排序  1-按热度排序
+	 * @param type 0-上拉刷新，1-下拉刷新
+	 * @throws IOException
+	 */
 	@RequestMapping("/getMessagesByFactory.do")
 	public void getMessagesByFactory(HttpServletRequest request,
 			HttpServletResponse response, ApiContext apiContext, 
 			@RequestParam(value="factory_id",required=true) long factory_id, 
 			@RequestParam(value="mark",required=false,defaultValue="0") long mark,
-			@RequestParam(value="order",required=false,defaultValue="1") int order,
-			@RequestParam(value="type",required=false,defaultValue="0") int type) throws IOException {
-		messageService.getMessagesByFactory(request, response, apiContext, factory_id, mark, order, type);
+			@RequestParam(value="order",required=false,defaultValue="0") int order,
+			@RequestParam(value="type",required=false,defaultValue="0") int type,
+			@RequestParam(value="page_cnt",required=false,defaultValue="2") int page_cnt) throws IOException {
+		messageService.getMessagesByFactory(request, response, apiContext, factory_id, mark, order, type, page_cnt);
 	}
 	
 	public void setMessageService(MessageService messageService) {
