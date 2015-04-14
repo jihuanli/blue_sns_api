@@ -1,5 +1,7 @@
 package com.dabanniu.api.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -22,7 +24,17 @@ public class MessageController {
     public void getNewsDetail(HttpServletRequest request,HttpServletResponse response,ApiContext apiContext,
     		@RequestParam(value="messageId",required=true) long messageId) throws Exception {
 		messageService.getMessageDetail(request, response, apiContext, messageId);
-    }	
+	}
+	
+	@RequestMapping("/getMessagesByFactory.do")
+	public void getMessagesByFactory(HttpServletRequest request,
+			HttpServletResponse response, ApiContext apiContext, 
+			@RequestParam(value="factory_id",required=true) long factory_id, 
+			@RequestParam(value="mark",required=false,defaultValue="0") long mark,
+			@RequestParam(value="order",required=false,defaultValue="1") int order,
+			@RequestParam(value="type",required=false,defaultValue="0") int type) throws IOException {
+		messageService.getMessagesByFactory(request, response, apiContext, factory_id, mark, order, type);
+	}
 	
 	public void setMessageService(MessageService messageService) {
 		this.messageService = messageService;
