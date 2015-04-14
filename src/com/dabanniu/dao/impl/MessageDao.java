@@ -24,7 +24,7 @@ public class MessageDao extends NamedParameterJdbcDaoSupport {
 		ListResultData resultData = new ListResultData();
 		
 		List<MessageBean> list = null;
-		if (type == 0) {
+		if (type == 1) {
 		    list = this.getJdbcTemplate().query(GET_NEW_MESSAGE_LIST, new Object[] {factory_id, mark, page_cnt}, MAPPER);
 		} else {
 			list = this.getJdbcTemplate().query(GET_OLD_MESSAGE_LIST, new Object[] {factory_id, mark, page_cnt}, MAPPER);
