@@ -44,7 +44,11 @@ public class MessageService {
 			if(list.size()==0){
 				output_messages.setMark("0");
 			}else{
-				output_messages.setMark(String.valueOf(list.get(list.size()-1).getMessage_id()));
+				if (type == 1) {// 下拉刷新，取最新的数据
+				    output_messages.setMark(String.valueOf(list.get(list.size()-1).getMessage_id()));
+				} else {
+					output_messages.setMark(String.valueOf(list.get(0).getMessage_id()));
+				}
 			}
 		}
 		JsonResponseUtils.writeJson(response, JsonUtils.objectToJsonString(output_messages));
