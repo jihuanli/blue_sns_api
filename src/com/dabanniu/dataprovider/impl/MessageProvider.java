@@ -1,6 +1,7 @@
 package com.dabanniu.dataprovider.impl;
 
 import com.dabanniu.core.bean.dict.ListResultData;
+import com.dabanniu.core.constants.UserInteractionEnum;
 import com.dabanniu.dao.impl.MessageDao;
 import com.dabanniu.dataprovider.bean.MessageBean;
 
@@ -23,6 +24,10 @@ public class MessageProvider {
     	ListResultData result = new ListResultData();			
 		result = messageDao.getHotMessagesByFactory(factory_id);
 		return result;
+    }
+    
+    public boolean userInteraction(long message_id, UserInteractionEnum action) {
+    	return messageDao.userInteraction(message_id, action);
     }
 	
 	public MessageBean getMessage(long messageId) throws Exception {

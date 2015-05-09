@@ -6,6 +6,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 
 import com.dabanniu.core.bean.dict.ListResultData;
+import com.dabanniu.core.constants.UserInteractionEnum;
 import com.dabanniu.dataprovider.bean.MessageBean;
 
 public class MessageDao extends NamedParameterJdbcDaoSupport {
@@ -57,5 +58,25 @@ public class MessageDao extends NamedParameterJdbcDaoSupport {
 			return list.get(0);
 		}
 		return null;
+	}
+	
+	private static final String INSERT_USER_INTERACTION = "insert into user_interaction_log(content_type, content_id, action_type) values (0,?,?)";
+	private static final String MODIFY_MESSAGE_USER_INTERACTION_NUM = "update message set like_cnt=like_cnt+? ,unlike_cnt=unlike_cnt+? where message_id=?";
+	public boolean userInteraction(long message_id, UserInteractionEnum action) {
+		boolean result = false;
+		int like_increase = 0;
+		int unlike_increase = 0;
+		if (action.equals(UserInteractionEnum.LIKE)) {
+			like_increase = 1;
+		} else if (action.equals(UserInteractionEnum.UNLIKE)) {
+			unlike_increase = 1;
+		} else {
+			return false;
+		}
+		result = this.getJdbcTemplate().update(INSERT_USER_INTERACTION,new Object[] { message_id, action.value()}) > 0;
+		if (result) {
+			result = this.getJdbcTemplate().update(MODIFY_MESSAGE_USER_INTERACTION_NUM,new Object[] { like_increase, unlike_increase, message_id}) > 0;
+		}
+		return result;
 	}
 }

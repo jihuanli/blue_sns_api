@@ -18,7 +18,9 @@ public class Message extends BaseModel implements Serializable {
 	
 	private Integer user_id;
 	
-	private Integer vote;
+	private Integer like_cnt;
+	
+	private Integer unlike_cnt;
 	
 	private Integer reply_num;
 	
@@ -66,14 +68,6 @@ public class Message extends BaseModel implements Serializable {
 		this.message_id = message_id;
 	}
 
-	public Integer getVote() {
-		return vote;
-	}
-
-	public void setVote(Integer vote) {
-		this.vote = vote;
-	}
-
 	public Integer getReply_num() {
 		return reply_num;
 	}
@@ -96,6 +90,22 @@ public class Message extends BaseModel implements Serializable {
 
 	public void setLatitude(Double latitude) {
 		this.latitude = latitude;
+	}
+
+	public Integer getLike_cnt() {
+		return like_cnt;
+	}
+
+	public void setLike_cnt(Integer like_cnt) {
+		this.like_cnt = like_cnt;
+	}
+
+	public Integer getUnlike_cnt() {
+		return unlike_cnt;
+	}
+
+	public void setUnlike_cnt(Integer unlike_cnt) {
+		this.unlike_cnt = unlike_cnt;
 	}
 
 }

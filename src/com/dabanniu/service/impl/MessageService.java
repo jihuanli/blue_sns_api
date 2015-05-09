@@ -7,8 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dabanniu.core.bean.dict.ListResultData;
+import com.dabanniu.core.constants.UserInteractionEnum;
 import com.dabanniu.core.parameter.ApiContext;
 import com.dabanniu.core.response.ErrorResponse;
+import com.dabanniu.core.response.SuccessResponse;
 import com.dabanniu.core.utils.JsonResponseUtils;
 import com.dabanniu.core.utils.JsonUtils;
 import com.dabanniu.dataprovider.bean.MessageBean;
@@ -66,6 +68,16 @@ public class MessageService {
 		output_messages.setMessages(list);
 		JsonResponseUtils.writeJson(response, JsonUtils.objectToJsonString(output_messages));
 	}
+	
+	public void userInteraction(HttpServletRequest request,
+			HttpServletResponse response, ApiContext apiContext,
+			long message_id, UserInteractionEnum action) throws IOException {
+		if (messageProvider.userInteraction(message_id, action)) {
+			JsonResponseUtils.writeJson(response, new SuccessResponse("互动成功！"));
+		} 
+		JsonResponseUtils.writeJson(response, new ErrorResponse("互动失败，请稍后再试！"));
+	}
+	
 	
 	public void setMessageProvider(MessageProvider messageProvider) {
 		this.messageProvider = messageProvider;
