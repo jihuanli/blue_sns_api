@@ -8,14 +8,20 @@ public class MessageProvider {
 	
     private MessageDao messageDao;
     
-    public ListResultData getMessagesByFactory(long factory_id,
-    		long mark, int page_cnt, int order, int type) {
+    public ListResultData getNewMessagesByFactory(long factory_id,
+    		long mark, int page_cnt, int type) {
     	ListResultData result = new ListResultData();
 		if(mark < 0){
 			return result;
 		}
 			
-		result = messageDao.getMessagesByFactory(factory_id, mark, page_cnt, order, type);
+		result = messageDao.getNewMessagesByFactory(factory_id, mark, page_cnt, type);
+		return result;
+    }
+    
+    public ListResultData getHotMessagesByFactory(long factory_id) {
+    	ListResultData result = new ListResultData();			
+		result = messageDao.getHotMessagesByFactory(factory_id);
 		return result;
     }
 	

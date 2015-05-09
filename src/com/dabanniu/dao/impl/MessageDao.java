@@ -19,16 +19,27 @@ public class MessageDao extends NamedParameterJdbcDaoSupport {
 	
 	private static final String GET_NEW_MESSAGE_LIST = "select * from message where factory_id = ? and message_id>? order by create_time desc limit 0,?";
 	private static final String GET_OLD_MESSAGE_LIST = "select * from message where factory_id = ? and message_id<? order by create_time desc limit 0,?";
-	public ListResultData getMessagesByFactory(long factory_id,
-    		long mark, int page_cnt, int order, int type) {
+	public ListResultData getNewMessagesByFactory(long factory_id,
+    		long mark, int page_cnt, int type) {
 		ListResultData resultData = new ListResultData();
 		
 		List<MessageBean> list = null;
 		if (type == 1) {
-		    list = this.getJdbcTemplate().query(GET_NEW_MESSAGE_LIST, new Object[] {factory_id, mark, page_cnt}, MAPPER);
-		} else {
-			list = this.getJdbcTemplate().query(GET_OLD_MESSAGE_LIST, new Object[] {factory_id, mark, page_cnt}, MAPPER);
+	    	list = this.getJdbcTemplate().query(GET_NEW_MESSAGE_LIST, new Object[] {factory_id, mark, page_cnt}, MAPPER);
+	    } else {
+	    	list = this.getJdbcTemplate().query(GET_OLD_MESSAGE_LIST, new Object[] {factory_id, mark, page_cnt}, MAPPER);
 		}
+		resultData.setData(list);
+		resultData.setTotalNumber(9999);
+		return resultData;
+	}
+	
+	private static final String GET_HOT_MESSAGE_LIST = "select * from message where factory_id = ? order by vote desc limit 20";
+	public ListResultData getHotMessagesByFactory(long factory_id) {
+		ListResultData resultData = new ListResultData();
+		
+		List<MessageBean> list = null;
+	    list = this.getJdbcTemplate().query(GET_HOT_MESSAGE_LIST, new Object[] {factory_id}, MAPPER);
 		resultData.setData(list);
 		resultData.setTotalNumber(9999);
 		return resultData;

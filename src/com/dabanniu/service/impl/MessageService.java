@@ -31,10 +31,10 @@ public class MessageService {
 	} 
     
 	@SuppressWarnings("unchecked")
-	public void getMessagesByFactory(HttpServletRequest request,
+	public void getNewMessagesByFactory(HttpServletRequest request,
 			HttpServletResponse response, ApiContext apiContext, 
-			long factory_id, long mark, int order, int type, int page_cnt) throws IOException {
-		ListResultData resultData = messageProvider.getMessagesByFactory(factory_id, mark, page_cnt, order, type);
+			long factory_id, long mark, int type, int page_cnt) throws IOException {
+		ListResultData resultData = messageProvider.getNewMessagesByFactory(factory_id, mark, page_cnt, type);
 		List<MessageBean> list = resultData.getData();
 		MessagesResultBean output_messages = new MessagesResultBean();
 		output_messages.setTotalNumber(resultData.getTotalNumber());
@@ -51,6 +51,19 @@ public class MessageService {
 				}
 			}
 		}
+		JsonResponseUtils.writeJson(response, JsonUtils.objectToJsonString(output_messages));
+	}
+	
+
+	@SuppressWarnings("unchecked")
+	public void getHotMessagesByFactory(HttpServletRequest request,
+			HttpServletResponse response, ApiContext apiContext, 
+			long factory_id) throws IOException {
+		ListResultData resultData = messageProvider.getHotMessagesByFactory(factory_id);
+		List<MessageBean> list = resultData.getData();
+		MessagesResultBean output_messages = new MessagesResultBean();
+		output_messages.setTotalNumber(resultData.getTotalNumber());
+		output_messages.setMessages(list);
 		JsonResponseUtils.writeJson(response, JsonUtils.objectToJsonString(output_messages));
 	}
 	
