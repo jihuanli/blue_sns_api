@@ -13,4 +13,9 @@
 		<property name="messageService" ref="messageService"></property>				
 	</bean>
 	
+	<bean id="messageCommentController" class="com.dabanniu.api.controller.MessageCommentController">	
+		<property name="messageService" ref="messageService"></property>
+		<property name="messageCommentService" ref="messageCommentService"></property>				
+	</bean>
+	
 </beans>

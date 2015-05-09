@@ -6,6 +6,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcDaoSupport;
 
 import com.dabanniu.core.bean.dict.ListResultData;
+import com.dabanniu.core.constants.ContentType;
 import com.dabanniu.core.constants.UserInteractionEnum;
 import com.dabanniu.dataprovider.bean.MessageBean;
 
@@ -60,9 +61,10 @@ public class MessageDao extends NamedParameterJdbcDaoSupport {
 		return null;
 	}
 	
-	private static final String INSERT_USER_INTERACTION = "insert into user_interaction_log(content_type, content_id, action_type) values (0,?,?)";
+	private static final String INSERT_USER_INTERACTION = "insert into user_interaction_log(content_type, content_id, action_type) values (?,?,?)";
 	private static final String MODIFY_MESSAGE_USER_INTERACTION_NUM = "update message set like_cnt=like_cnt+? ,unlike_cnt=unlike_cnt+? where message_id=?";
-	public boolean userInteraction(long message_id, UserInteractionEnum action) {
+	private static final String MODIFY_MESSAGE_COMMENT_USER_INTERACTION_NUM = "update message_comment set like_cnt=like_cnt+? ,unlike_cnt=unlike_cnt+? where id=?";
+	public boolean userInteraction(long message_id, UserInteractionEnum action, ContentType content_type) {
 		boolean result = false;
 		int like_increase = 0;
 		int unlike_increase = 0;
@@ -73,9 +75,15 @@ public class MessageDao extends NamedParameterJdbcDaoSupport {
 		} else {
 			return false;
 		}
-		result = this.getJdbcTemplate().update(INSERT_USER_INTERACTION,new Object[] { message_id, action.value()}) > 0;
+		result = this.getJdbcTemplate().update(INSERT_USER_INTERACTION,new Object[] { content_type.value(), message_id, action.value()}) > 0;
 		if (result) {
-			result = this.getJdbcTemplate().update(MODIFY_MESSAGE_USER_INTERACTION_NUM,new Object[] { like_increase, unlike_increase, message_id}) > 0;
+			if (content_type.equals(ContentType.MESSAGE)) {
+			    result = this.getJdbcTemplate().update(MODIFY_MESSAGE_USER_INTERACTION_NUM,new Object[] { like_increase, unlike_increase, message_id}) > 0;
+			} else if (content_type.equals(ContentType.MESSAGE_COMMENT)) {
+				 result = this.getJdbcTemplate().update(MODIFY_MESSAGE_COMMENT_USER_INTERACTION_NUM,new Object[] { like_increase, unlike_increase, message_id}) > 0;
+			} else {
+				return false;
+			}
 		}
 		return result;
 	}

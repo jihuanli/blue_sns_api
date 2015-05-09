@@ -20,4 +20,9 @@
 		<property name="messageDao" ref="messageDao" />						
 	</bean>
 	
+	<bean id="messageCommentProvider"
+		class="com.dabanniu.dataprovider.impl.MessageCommentProvider">
+		<property name="messageCommentDao" ref="messageCommentDao" />						
+	</bean>
+	
 </beans>

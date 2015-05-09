@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dabanniu.core.bean.dict.ListResultData;
+import com.dabanniu.core.constants.ContentType;
 import com.dabanniu.core.constants.UserInteractionEnum;
 import com.dabanniu.core.parameter.ApiContext;
 import com.dabanniu.core.response.ErrorResponse;
@@ -71,8 +72,8 @@ public class MessageService {
 	
 	public void userInteraction(HttpServletRequest request,
 			HttpServletResponse response, ApiContext apiContext,
-			long message_id, UserInteractionEnum action) throws IOException {
-		if (messageProvider.userInteraction(message_id, action)) {
+			long message_id, UserInteractionEnum action, ContentType content_type) throws IOException {
+		if (messageProvider.userInteraction(message_id, action, content_type)) {
 			JsonResponseUtils.writeJson(response, new SuccessResponse("互动成功！"));
 		} 
 		JsonResponseUtils.writeJson(response, new ErrorResponse("互动失败，请稍后再试！"));

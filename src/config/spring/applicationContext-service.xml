@@ -20,4 +20,9 @@
 		<property name="messageProvider" ref="messageProvider" />
 	</bean>
 	
+	<bean id="messageCommentService"
+		class="com.dabanniu.service.impl.MessageCommentService">
+		<property name="messageCommentProvider" ref="messageCommentProvider" />
+	</bean>
+	
 </beans>

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.dabanniu.core.constants.ContentType;
 import com.dabanniu.core.constants.UserInteractionEnum;
 import com.dabanniu.core.parameter.ApiContext;
 import com.dabanniu.service.impl.MessageService;
@@ -61,7 +62,7 @@ public class MessageController {
 			HttpServletResponse response, ApiContext apiContext, 
 			@RequestParam(value="message_id",required=true) long message_id
 			) throws IOException {
-		messageService.userInteraction(request, response, apiContext, message_id, UserInteractionEnum.LIKE);
+		messageService.userInteraction(request, response, apiContext, message_id, UserInteractionEnum.LIKE, ContentType.MESSAGE);
 	}
 	
 	@RequestMapping("/unlikeMessage.do")
@@ -69,7 +70,7 @@ public class MessageController {
 			HttpServletResponse response, ApiContext apiContext, 
 			@RequestParam(value="message_id",required=true) long message_id
 			) throws IOException {
-		messageService.userInteraction(request, response, apiContext, message_id, UserInteractionEnum.UNLIKE);
+		messageService.userInteraction(request, response, apiContext, message_id, UserInteractionEnum.UNLIKE, ContentType.MESSAGE);
 	}
 	
 	public void setMessageService(MessageService messageService) {

@@ -17,5 +17,9 @@
 	<bean id="messageDao" class="com.dabanniu.dao.impl.MessageDao">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
+	
+	<bean id="messageCommentDao" class="com.dabanniu.dao.impl.MessageCommentDao">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
 
 </beans>
