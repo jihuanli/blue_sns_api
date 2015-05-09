@@ -49,7 +49,7 @@ public class MessageController {
 	 * @param mark  标记id
 	 * @throws IOException
 	 */
-	@RequestMapping("/getNewMessagesByFactory.do")
+	@RequestMapping("/getHotMessagesByFactory.do")
 	public void getHotMessagesByFactory(HttpServletRequest request,
 			HttpServletResponse response, ApiContext apiContext, 
 			@RequestParam(value="factory_id",required=true) long factory_id) throws IOException {
