@@ -35,7 +35,7 @@ public class MessageDao extends NamedParameterJdbcDaoSupport {
 		return resultData;
 	}
 	
-	private static final String GET_HOT_MESSAGE_LIST = "select * from message where factory_id = ? order by vote desc limit 20";
+	private static final String GET_HOT_MESSAGE_LIST = "select * from message where factory_id = ? order by like_cnt desc limit 20";
 	public ListResultData getHotMessagesByFactory(long factory_id) {
 		ListResultData resultData = new ListResultData();
 		
