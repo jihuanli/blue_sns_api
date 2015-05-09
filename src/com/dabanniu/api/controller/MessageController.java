@@ -46,7 +46,6 @@ public class MessageController {
 	/**
 	 * 最热列表
 	 * @param factory_id 
-	 * @param mark  标记id
 	 * @throws IOException
 	 */
 	@RequestMapping("/getHotMessagesByFactory.do")
